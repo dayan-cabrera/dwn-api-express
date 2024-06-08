@@ -1,18 +1,7 @@
-const express = require("express");
 require("dotenv").config();
-const port = process.env.PORT;
 
-const app = express();
+const Server = require("./models/server");
 
-// Servir contenido estatico
-app.use(express.static("public"));
+const server = new Server();
 
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
-
-app.get("*", (req, res) => {
-  res.send("404 | page not found");
-});
-
-app.listen(port);
+server.listen();

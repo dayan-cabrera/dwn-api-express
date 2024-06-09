@@ -1,5 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
+const { JSDOM } = require("jsdom");
 
 const path = require("path");
 const os = require("os");

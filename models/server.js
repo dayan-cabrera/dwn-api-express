@@ -11,18 +11,21 @@ class Server {
     this.routes();
   }
 
-  routes() {
-    this.app.use("/api", require("../routes/dwn.routes"));
-  }
-
   middlewares() {
     this.app.use(
       cors({
         origin: "http://localhost:3000",
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        headers: ["Content-Type", "Accept"],
+        credentials: true,
       })
     );
     this.app.use(express.json());
-    this.app.use(express.static("public"));
+    this.app.use(express.static("public")); // Servir archivos estáticos desde la carpeta "public"
+  }
+
+  routes() {
+    this.app.use("/api", require("../routes/dwn.routes"));
   }
 
   listen() {

@@ -16,12 +16,12 @@ class Server {
       cors({
         origin: "http://localhost:3000",
         methods: ["GET", "POST", "PUT", "DELETE"],
-        headers: ["Content-Type", "Accept"],
+        allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true,
       })
     );
     this.app.use(express.json());
-    this.app.use(express.static("public")); // Servir archivos estáticos desde la carpeta "public"
+    this.app.use(express.static("public"));
   }
 
   routes() {

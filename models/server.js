@@ -19,9 +19,6 @@ class Server {
     this.app.use(
       cors({
         origin: "http://localhost:3000",
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        headers: ["Content-Type", "Accept"],
-        credentials: true,
       })
     );
     this.app.use(express.json());

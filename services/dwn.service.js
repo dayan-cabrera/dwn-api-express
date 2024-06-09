@@ -48,7 +48,7 @@ class DonwloadService {
       return imagesUrl;
     } catch (error) {
       console.error(`Error fetching image names: ${error}`);
-      return false;
+      return error;
     }
   }
   async downloadElement(file) {
